@@ -1,1 +1,1 @@
-log("Hello hh World hhh")
+log("Hello h World hhh")
