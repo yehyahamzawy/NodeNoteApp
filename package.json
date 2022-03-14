@@ -1,0 +1,24 @@
+{
+  "name": "nodenoteapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Note.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yehyahamzawy/NodeNoteApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yehyahamzawy/NodeNoteApp/issues"
+  },
+  "homepage": "https://github.com/yehyahamzawy/NodeNoteApp#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "validator": "^13.7.0",
+    "yargs": "^17.3.1"
+  }
+}
