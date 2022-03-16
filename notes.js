@@ -2,7 +2,7 @@ const chalk = require('chalk')
 const fs = require('fs')
 
 const addNotes = function (title, body) {
-    console.log('Note title:', chalk.bold.green(title), "\nBody:", chalk.bold.inverse(body))
+    console.log('Note title:', chalk.bold.blue(title), "\nBody:", chalk.bold.inverse(body))
      
     const notes = loadNotes()
 
@@ -12,7 +12,6 @@ const addNotes = function (title, body) {
             console.log('duplicate title found, please use a different title')
             return false
         }
-        console.log('done')
         return true
     });
 
@@ -23,6 +22,7 @@ const addNotes = function (title, body) {
     })
 
     saveNotes(notes)
+    console.log(chalk.bold.green('Note added!'))
     }
 }
 
