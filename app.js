@@ -1,5 +1,4 @@
 const noteHelper = require('./notes.js')
-const chalk = require('chalk')
 const yargs = require('yargs')
 
 
@@ -37,7 +36,7 @@ yargs.command({
         }
     },
     handler: function(argv) {
-        console.log('Note title:', chalk.bold.green(argv.title), "\nBody:", chalk.bold.inverse(argv.body))
+        noteHelper.addNotes(argv.title, argv.body)
     }
 }) // add command
 
