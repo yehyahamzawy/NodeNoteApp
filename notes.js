@@ -1,6 +1,7 @@
 const chalk = require('chalk')
 const fs = require('fs')
 
+
 const addNotes = function (title, body) {
     console.log('Note title:', chalk.bold.blue(title), "\nBody:", chalk.bold.inverse(body))
      
@@ -41,8 +42,27 @@ const saveNotes = function (notes) {
     fs.writeFileSync('notes.json', data)
 }
 
+const removeNotes = function(title) {
+    const notes = loadNotes()
+    // const newNotes = notes.filter(n => {
+    //     return n.title !== title
+    // })
+    // saveNotes(newNotes) // ez method, it seems FILTER method creates a new array and keeps adding elements that pass. which is not a low cost solution in big data
+    
+    const noteIndex = notes.findIndex(n => {
+        return n.title === title
+    })// find index of desired note 
+
+    if(noteIndex !== -1)// make sure it exists
+    {
+    notes.splice(noteIndex, 1)
+    saveNotes(notes)
+    console.log('Note with title:', chalk.bold.yellow(title), 'successfully deleted!')
+    }else console.log('Note with title:', chalk.bold.yellow(title), 'not found')
+}
 
 
 module.exports = {
-    addNotes: addNotes
+    addNotes: addNotes,
+    removeNotes: removeNotes
 }
